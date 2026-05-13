@@ -2,456 +2,101 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>CTecnologia | Servicios Técnicos</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description"
+content="Soporte técnico profesional para PCs, laptops, impresoras, redes y asistencia remota.">
 
-<style>
+<meta name="theme-color" content="#00d9ff">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-html{
-    scroll-behavior:smooth;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
-body{
-    background:black;
-    color:white;
-    overflow-x:hidden;
-}
+<link rel="stylesheet" href="style.css">
 
-/* VIDEO FONDO */
+<link rel="icon"
+href="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
 
-.video-fondo{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    z-index:-2;
-}
-
-.video-fondo iframe{
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:177.77vh;
-    height:56.25vw;
-    min-width:100%;
-    min-height:100%;
-    transform:translate(-50%, -50%);
-    pointer-events:none;
-}
-
-.overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.75);
-    z-index:-1;
-}
-
-/* HEADER */
-
-header{
-    width:100%;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:fixed;
-    top:0;
-    z-index:999;
-    background:rgba(0,0,0,0.35);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.logo{
-    font-size:34px;
-    font-weight:700;
-    color:#00d9ff;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    transition:0.3s;
-}
-
-nav a:hover{
-    color:#00d9ff;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:120px 20px;
-}
-
-.hero-content{
-    max-width:850px;
-}
-
-.hero h1{
-    font-size:72px;
-    line-height:1.1;
-    margin-bottom:25px;
-    background:linear-gradient(to right,#00d9ff,#6a5cff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-    font-size:22px;
-    line-height:1.7;
-    color:#d8d8d8;
-    margin-bottom:40px;
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:16px 34px;
-    border:none;
-    border-radius:14px;
-    font-weight:600;
-    cursor:pointer;
-    text-decoration:none;
-    transition:0.3s;
-    color:white;
-}
-
-.btn-primary{
-    background:linear-gradient(45deg,#00d9ff,#007bff);
-    box-shadow:0 0 25px rgba(0,217,255,0.4);
-}
-
-.btn-secondary{
-    background:linear-gradient(45deg,#7b2fff,#ff00d4);
-    box-shadow:0 0 25px rgba(123,47,255,0.4);
-}
-
-.btn:hover{
-    transform:translateY(-5px) scale(1.03);
-}
-
-/* SECCIONES */
-
-section{
-    padding:100px 8%;
-}
-
-.titulo{
-    text-align:center;
-    font-size:46px;
-    margin-bottom:60px;
-    color:#00d9ff;
-}
-
-/* SERVICIOS */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:22px;
-    padding:35px;
-    text-align:center;
-    backdrop-filter:blur(10px);
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    border-color:#00d9ff;
-    box-shadow:0 0 30px rgba(0,217,255,0.2);
-}
-
-.card h3{
-    color:#00d9ff;
-    margin-bottom:15px;
-}
-
-.card p{
-    color:#d4d4d4;
-    line-height:1.7;
-}
-
-/* PRODUCTOS */
-
-.productos{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.producto{
-    background:rgba(255,255,255,0.06);
-    border-radius:22px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:0.4s;
-}
-
-.producto:hover{
-    transform:translateY(-8px);
-}
-
-.producto img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-}
-
-.producto h4{
-    padding:20px;
-}
-
-/* DIAGNOSTICO */
-
-.diagnostico-box{
-    max-width:700px;
-    margin:auto;
-    background:rgba(255,255,255,0.06);
-    padding:35px;
-    border-radius:22px;
-    border:1px solid rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-}
-
-.diagnostico-box input,
-.diagnostico-box select,
-.diagnostico-box textarea{
-    width:100%;
-    padding:15px;
-    margin-top:12px;
-    margin-bottom:20px;
-    border:none;
-    border-radius:12px;
-    background:rgba(255,255,255,0.08);
-    color:white;
-    outline:none;
-}
-
-textarea{
-    resize:none;
-    height:120px;
-}
-
-/* CONTACTO */
-
-.contacto-card{
-    max-width:400px;
-    margin:auto;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:30px;
-    color:#9f9f9f;
-}
-
-/* BOTONES FLOTANTES */
-
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:70px;
-    height:70px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:34px;
-    text-decoration:none;
-    z-index:999;
-}
-
-.catalogo{
-    position:fixed;
-    bottom:105px;
-    right:20px;
-    background:#00d9ff;
-    color:black;
-    padding:14px 18px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    z-index:999;
-}
-
-/* MODAL */
-
-.modal{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.78);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    padding:20px;
-}
-
-.modal-content{
-    width:100%;
-    max-width:550px;
-    background:#0f1729;
-    border:1px solid rgba(0,217,255,0.3);
-    border-radius:25px;
-    padding:35px;
-    position:relative;
-    animation:animar 0.4s ease;
-    box-shadow:0 0 40px rgba(0,217,255,0.15);
-}
-
-@keyframes animar{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.close{
-    position:absolute;
-    top:15px;
-    right:20px;
-    font-size:30px;
-    cursor:pointer;
-}
-
-.modal h2{
-    text-align:center;
-    color:#00d9ff;
-    margin-bottom:25px;
-}
-
-.form-group{
-    margin-bottom:18px;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    background:#111c35;
-    color:white;
-    outline:none;
-}
-
-.submit-btn{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:14px;
-    background:linear-gradient(45deg,#00d9ff,#007bff);
-    color:white;
-    font-weight:600;
-    cursor:pointer;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-    nav{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:44px;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
-
-}
-
-</style>
 </head>
 
 <body>
 
-<!-- VIDEO -->
+<!-- =========================================
+     VIDEO FONDO
+========================================= -->
 
 <div class="video-fondo">
-<iframe src="https://www.youtube.com/embed/iWCenGIIBVE?autoplay=1&mute=1&loop=1&playlist=iWCenGIIBVE&controls=0"
+
+<iframe
+src="https://www.youtube.com/embed/iWCenGIIBVE?autoplay=1&mute=1&loop=1&playlist=iWCenGIIBVE&controls=0&showinfo=0&modestbranding=1"
 frameborder="0"
 allow="autoplay">
 </iframe>
+
 </div>
 
 <div class="overlay"></div>
 
-<!-- HEADER -->
+<!-- =========================================
+     HEADER
+========================================= -->
 
 <header>
 
-<div class="logo">CTecnologia</div>
+<div class="logo">
+CTecnologia
+</div>
 
 <nav>
-<a href="#servicios">Servicios</a>
-<a href="#productos">Productos</a>
-<a href="#diagnostico">Diagnóstico</a>
-<a href="#contacto">Contacto</a>
+
+<a href="#servicios">
+Servicios
+</a>
+
+<a href="#remoto-premium">
+Remoto
+</a>
+
+<a href="#diagnostico">
+Diagnóstico
+</a>
+
+<a href="#contacto">
+Contacto
+</a>
+
 </nav>
 
 </header>
 
-<!-- HERO -->
+<!-- =========================================
+     HERO
+========================================= -->
 
 <section class="hero">
 
 <div class="hero-content">
 
-<h1>Servicios Técnicos</h1>
+<div class="hero-badge">
+⚡ Soporte Técnico Premium
+</div>
+
+<h1>
+Soluciones Tecnológicas Profesionales
+</h1>
 
 <p>
-Reparamos, optimizamos y conectamos tu mundo digital.<br>
-Soporte técnico confiable, rápido y profesional.
+Reparamos, optimizamos y protegemos tus equipos
+con atención rápida, moderna y segura.<br>
+Especialistas en laptops, PCs, impresoras,
+redes y soporte remoto.
 </p>
 
 <div class="buttons">
@@ -459,7 +104,16 @@ Soporte técnico confiable, rápido y profesional.
 <a class="btn btn-primary"
 href="https://wa.me/51924489650"
 target="_blank">
-WhatsApp
+
+💬 WhatsApp
+
+</a>
+
+<a class="btn btn-secondary"
+href="#diagnostico">
+
+🚀 Diagnóstico Web
+
 </a>
 
 </div>
@@ -468,818 +122,414 @@ WhatsApp
 
 </section>
 
-<!-- SERVICIOS -->
+<!-- =========================================
+     SERVICIOS
+========================================= -->
 
 <section id="servicios">
 
-<h2 class="titulo">Servicios Técnicos</h2>
+<h2 class="titulo">
+Servicios Técnicos
+</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>🔧 Mantenimiento Preventivo</h3>
-<p>Evita fallos y sobrecalentamiento mediante mantenimiento técnico especializado para laptops, PCs e impresoras.</p>
+
+<div class="service-icon">
+🔧
+</div>
+
+<h3>
+Mantenimiento Preventivo
+</h3>
+
+<p>
+Evita sobrecalentamientos y fallos mediante
+limpieza profesional y optimización interna.
+</p>
+
 </div>
 
 <div class="card">
-<h3>💻 Reparación de Laptops/PCs</h3>
-<p>Recupera la potencia de tu equipo con reparaciones precisas, actualización de componentes (SSD/RAM) y soporte técnico integral.</p>
+
+<div class="service-icon">
+💻
+</div>
+
+<h3>
+Reparación de PCs y Laptops
+</h3>
+
+<p>
+Solución de errores, cambio de componentes,
+SSD, RAM y recuperación de rendimiento.
+</p>
+
 </div>
 
 <div class="card">
-<h3>🛡️ Eliminación de Virus</h3>
-<p>Eliminación de malware, virus y publicidad no deseada sin perder tus archivos importantes.</p>
+
+<div class="service-icon">
+🛡️
+</div>
+
+<h3>
+Eliminación de Virus
+</h3>
+
+<p>
+Protección avanzada contra malware, spyware
+y amenazas que afectan tu información.
+</p>
+
 </div>
 
 <div class="card">
-<h3>📷 Instalación de Cámaras</h3>
-<p>Instalación de sistemas CCTV e IP con monitoreo remoto desde celular y configuración completa.</p>
+
+<div class="service-icon">
+📷
 </div>
+
+<h3>
+Instalación de Cámaras
+</h3>
+
+<p>
+Configuración de cámaras IP y CCTV
+con monitoreo remoto desde celular.
+</p>
 
 </div>
 
-</section></div>
-<!-- ASISTENCIA REMOTA PREMIUM -->
+</div>
+
+</section>
+
+<!-- =========================================
+     ASISTENCIA REMOTA
+========================================= -->
+
 <section id="remoto-premium">
 
 <div class="remote-container">
 
-    <!-- TEXTO -->
-    <div class="remote-info">
+<!-- INFO -->
 
-        <span class="remote-badge">
-            SOPORTE EN TIEMPO REAL
-        </span>
+<div class="remote-info">
 
-        <h2>
-            📡 Asistencia Técnica Remota
-        </h2>
+<span class="remote-badge">
 
-        <p>
-            Solucionamos problemas de software, lentitud,
-            virus, impresoras y configuraciones sin que
-            tengas que salir de casa.
-        </p>
+SOPORTE EN TIEMPO REAL
 
-        <div class="remote-list">
+</span>
 
-            <div class="remote-item">
-                ⚡ Atención rápida y segura
-            </div>
+<h2>
 
-            <div class="remote-item">
-                🔒 Conexión cifrada y supervisada
-            </div>
+📡 Asistencia Técnica Remota
 
-            <div class="remote-item">
-                🖥️ Compatible con Windows
-            </div>
+</h2>
 
-            <div class="remote-item">
-                📞 Soporte mediante AnyDesk
-            </div>
+<p>
 
-        </div>
+Solucionamos problemas de software,
+lentitud, impresoras y configuraciones
+sin que tengas que salir de casa.
 
-        <a href="https://wa.me/51924489650?text=Hola,%20necesito%20asistencia%20técnica%20remota."
-        target="_blank"
-        class="remote-btn">
+</p>
 
-            Solicitar Soporte Ahora 🚀
+<div class="remote-list">
 
-        </a>
+<div class="remote-item">
+⚡ Atención rápida y segura
+</div>
 
-    </div>
+<div class="remote-item">
+🔒 Conexión cifrada y supervisada
+</div>
 
-    <!-- TARJETA -->
-    <div class="remote-card">
+<div class="remote-item">
+🖥️ Compatible con Windows
+</div>
 
-        <div class="remote-glow"></div>
+<div class="remote-item">
+📞 Soporte mediante AnyDesk
+</div>
 
-        <div class="tool-box">
+</div>
 
-            <!-- ANYDESK -->
-            <div class="tool">
+<a href="https://wa.me/51924489650?text=Hola,%20necesito%20asistencia%20técnica%20remota."
+target="_blank"
+class="remote-btn">
 
-                <div class="tool-icon anydesk">
-                    🖥️
-                </div>
+Solicitar Soporte Ahora 🚀
 
-                <h4>AnyDesk</h4>
+</a>
 
-                <p>
-                    Acceso remoto rápido y estable.
-                </p>
+</div>
 
-            </div>
+<!-- TARJETA -->
 
-            <!-- SOPORTE -->
-            <div class="tool">
+<div class="remote-card">
 
-                <div class="tool-icon soporte">
-                    ⚙️
-                </div>
+<div class="remote-glow"></div>
 
-                <h4>Optimización</h4>
+<div class="tool-box">
 
-                <p>
-                    Limpieza y mejora del sistema.
-                </p>
+<div class="tool">
 
-            </div>
+<div class="tool-icon anydesk">
+🖥️
+</div>
 
-            <!-- SEGURIDAD -->
-            <div class="tool">
+<h4>
+AnyDesk
+</h4>
 
-                <div class="tool-icon seguridad">
-                    🔒
-                </div>
+<p>
+Acceso remoto rápido y estable.
+</p>
 
-                <h4>Seguridad</h4>
+</div>
 
-                <p>
-                    Protección contra malware y virus.
-                </p>
+<div class="tool">
 
-            </div>
+<div class="tool-icon soporte">
+⚙️
+</div>
 
-        </div>
+<h4>
+Optimización
+</h4>
 
-        <div class="status-box">
+<p>
+Limpieza y mejora del sistema.
+</p>
 
-            <span class="online-dot"></span>
+</div>
 
-            Técnicos disponibles ahora
+<div class="tool">
 
-        </div>
+<div class="tool-icon seguridad">
+🔒
+</div>
 
-    </div>
+<h4>
+Seguridad
+</h4>
+
+<p>
+Protección contra malware y virus.
+</p>
+
+</div>
+
+</div>
+
+<div class="status-box">
+
+<span class="online-dot"></span>
+
+Técnicos disponibles ahora
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<style>
+<!-- =========================================
+     DIAGNÓSTICO
+========================================= -->
 
-/* REMOTO PREMIUM */
-
-#remoto-premium{
-    padding:100px 8%;
-}
-
-.remote-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:50px;
-    align-items:center;
-}
-
-/* TEXTO */
-
-.remote-info h2{
-    font-size:48px;
-    margin:20px 0;
-    color:#00d9ff;
-}
-
-.remote-info p{
-    color:#d4d4d4;
-    line-height:1.8;
-    font-size:17px;
-}
-
-.remote-badge{
-    background:rgba(0,217,255,0.15);
-    color:#00d9ff;
-    padding:10px 18px;
-    border-radius:50px;
-    font-size:13px;
-    border:1px solid rgba(0,217,255,0.3);
-}
-
-.remote-list{
-    margin-top:30px;
-}
-
-.remote-item{
-    margin-bottom:15px;
-    background:rgba(255,255,255,0.04);
-    padding:14px 18px;
-    border-radius:14px;
-    border:1px solid rgba(255,255,255,0.05);
-}
-
-.remote-btn{
-    display:inline-block;
-    margin-top:35px;
-    padding:16px 30px;
-    border-radius:16px;
-    text-decoration:none;
-    color:white;
-    font-weight:600;
-    background:linear-gradient(45deg,#00d9ff,#007bff);
-    box-shadow:0 0 25px rgba(0,217,255,0.3);
-    transition:0.4s;
-}
-
-.remote-btn:hover{
-    transform:translateY(-5px) scale(1.03);
-}
-
-/* TARJETA */
-
-.remote-card{
-    position:relative;
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:30px;
-    padding:40px;
-    overflow:hidden;
-    backdrop-filter:blur(10px);
-}
-
-.remote-glow{
-    position:absolute;
-    width:250px;
-    height:250px;
-    background:rgba(0,217,255,0.12);
-    border-radius:50%;
-    top:-80px;
-    right:-80px;
-    filter:blur(40px);
-}
-
-.tool-box{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:25px;
-    position:relative;
-    z-index:2;
-}
-
-.tool{
-    background:rgba(255,255,255,0.04);
-    border-radius:20px;
-    padding:22px;
-    border:1px solid rgba(255,255,255,0.06);
-    transition:0.4s;
-}
-
-.tool:hover{
-    transform:translateY(-5px);
-    border-color:#00d9ff;
-}
-
-.tool-icon{
-    width:70px;
-    height:70px;
-    border-radius:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    margin-bottom:15px;
-}
-
-.anydesk{
-    background:#ef4444;
-    box-shadow:0 0 20px rgba(239,68,68,0.4);
-}
-
-.soporte{
-    background:#007bff;
-    box-shadow:0 0 20px rgba(0,123,255,0.4);
-}
-
-.seguridad{
-    background:#00c853;
-    box-shadow:0 0 20px rgba(0,200,83,0.4);
-}
-
-.tool h4{
-    margin-bottom:10px;
-    color:#00d9ff;
-}
-
-.tool p{
-    color:#d4d4d4;
-    line-height:1.6;
-    font-size:14px;
-}
-
-/* STATUS */
-
-.status-box{
-    margin-top:30px;
-    background:rgba(0,200,83,0.12);
-    border:1px solid rgba(0,200,83,0.3);
-    padding:16px;
-    border-radius:16px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    color:#8effb5;
-    font-weight:600;
-}
-
-.online-dot{
-    width:12px;
-    height:12px;
-    background:#00ff6a;
-    border-radius:50%;
-    box-shadow:0 0 10px #00ff6a;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-.remote-info h2{
-    font-size:36px;
-}
-
-}
-
-</style>
-
-</section>
-
-</section>
-
-<!-- DIAGNÓSTICO PREMIUM -->
 <section id="diagnostico">
 
-<h2 class="titulo">Diagnóstico Inteligente</h2>
+<h2 class="titulo">
+Diagnóstico Inteligente
+</h2>
 
 <div class="diagnostico-box">
 
-    <!-- TIPO -->
-    <label>Tipo de equipo</label>
+<div class="diagnostico-header">
 
-    <select id="tipo" class="custom-select">
+<h3>
+🧠 Analiza tu equipo
+</h3>
 
-        <option value="PC">💻 PC</option>
-        <option value="Laptop">🖥️ Laptop</option>
-        <option value="Impresora">🖨️ Impresora</option>
+<p>
+Selecciona el problema para generar
+una recomendación automática.
+</p>
 
-    </select>
+</div>
 
-    <!-- PROBLEMA -->
-    <label>Problema detectado</label>
+<!-- TIPO -->
 
-    <select id="problema" class="custom-select">
+<label>
+Tipo de equipo
+</label>
 
-        <!-- PC -->
-        <option value="No enciende">
-            ⚡ No enciende
-        </option>
+<select id="tipo" class="custom-select">
 
-        <option value="Lento">
-            🐌 Equipo lento
-        </option>
+<option value="PC">
+💻 PC
+</option>
 
-        <option value="Virus">
-            🛡️ Virus o publicidad
-        </option>
+<option value="Laptop">
+🖥️ Laptop
+</option>
 
-        <option value="Pantalla azul">
-            🔵 Pantalla azul
-        </option>
+<option value="Impresora">
+🖨️ Impresora
+</option>
 
-        <option value="Internet">
-            🌐 Problema de internet
-        </option>
+</select>
 
-        <!-- IMPRESORA -->
-        <option value="Atasco de papel">
-            📄 Atasco de papel
-        </option>
+<!-- PROBLEMA -->
 
-        <option value="Mala calidad de impresión">
-            🖨️ Mala impresión
-        </option>
+<label>
+Problema detectado
+</label>
 
-        <option value="Error de conexión">
-            🔌 Error de conexión
-        </option>
+<select id="problema" class="custom-select">
 
-    </select>
+<option value="No enciende">
+⚡ No enciende
+</option>
 
-    <!-- DETALLE -->
-    <label>Detalle adicional</label>
+<option value="Lento">
+🐌 Equipo lento
+</option>
 
-    <textarea 
-    id="detalle"
-    placeholder="Describe el problema de tu equipo..."></textarea>
+<option value="Virus">
+🛡️ Virus o publicidad
+</option>
 
-    <!-- BOTON -->
-    <button class="btn btn-primary"
-    onclick="enviarDiagnostico()">
+<option value="Pantalla azul">
+🔵 Pantalla azul
+</option>
 
-        Analizar Problema 🚀
+<option value="Internet">
+🌐 Problema de internet
+</option>
 
-    </button>
+<option value="Atasco de papel">
+📄 Atasco de papel
+</option>
 
-    <!-- RESULTADO -->
-    <div id="resultado-diagnostico"></div>
+<option value="Mala calidad de impresión">
+🖨️ Mala impresión
+</option>
+
+<option value="Error de conexión">
+🔌 Error de conexión
+</option>
+
+</select>
+
+<!-- DETALLE -->
+
+<label>
+Detalle adicional
+</label>
+
+<textarea
+id="detalle"
+placeholder="Describe el problema de tu equipo..."></textarea>
+
+<button class="btn btn-primary diagnostico-btn"
+onclick="enviarDiagnostico()">
+
+🚀 Analizar Problema
+
+</button>
+
+<div id="resultado-diagnostico"></div>
 
 </div>
 
 </section>
 
-<style>
+<!-- =========================================
+     CONTACTO
+========================================= -->
 
-/* DIAGNOSTICO */
-
-.diagnostico-box{
-    max-width:750px;
-    margin:auto;
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:25px;
-    padding:35px;
-    backdrop-filter:blur(10px);
-    box-shadow:0 0 30px rgba(0,0,0,0.2);
-}
-
-.diagnostico-box label{
-    display:block;
-    margin-bottom:10px;
-    margin-top:15px;
-    font-weight:600;
-    color:#00d9ff;
-}
-
-.custom-select,
-#detalle{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:14px;
-    background:#111827;
-    color:white;
-    outline:none;
-    font-size:15px;
-    border:1px solid rgba(255,255,255,0.08);
-    margin-bottom:18px;
-}
-
-.custom-select option{
-    background:#0f172a;
-    color:white;
-}
-
-#detalle{
-    resize:none;
-    height:120px;
-}
-
-#resultado-diagnostico{
-    margin-top:25px;
-}
-
-/* RESULTADO */
-
-.resultado-box{
-    background:rgba(0,217,255,0.08);
-    border:1px solid rgba(0,217,255,0.3);
-    padding:25px;
-    border-radius:18px;
-    animation:fadeIn 0.4s ease;
-}
-
-.resultado-box h3{
-    color:#00d9ff;
-    margin-bottom:15px;
-}
-
-.resultado-box ul{
-    padding-left:20px;
-    line-height:1.8;
-}
-
-.resultado-box p{
-    margin-top:15px;
-    line-height:1.7;
-}
-
-.resultado-box a{
-    display:inline-block;
-    margin-top:20px;
-    background:#25D366;
-    color:white;
-    padding:14px 24px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.resultado-box a:hover{
-    transform:scale(1.05);
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-</style>
-
-<script>
-
-function enviarDiagnostico(){
-
-    let tipo =
-    document.getElementById("tipo").value;
-
-    let problema =
-    document.getElementById("problema").value;
-
-    let detalle =
-    document.getElementById("detalle").value;
-
-    let resultado =
-    document.getElementById("resultado-diagnostico");
-
-    let titulo = "";
-    let causas = "";
-    let sugerencia = "";
-
-    switch(problema){
-
-        case "No enciende":
-
-            titulo = "⚡ Problema de energía";
-
-            causas = `
-            <li>Fuente dañada.</li>
-            <li>Batería descargada.</li>
-            <li>Falla en botón power.</li>
-            `;
-
-            sugerencia =
-            "Prueba otro cargador o conexión eléctrica.";
-
-        break;
-
-        case "Lento":
-
-            titulo = "🐌 Rendimiento bajo";
-
-            causas = `
-            <li>Disco duro saturado.</li>
-            <li>Demasiados programas.</li>
-            <li>Falta mantenimiento.</li>
-            `;
-
-            sugerencia =
-            "Se recomienda optimización y posible SSD.";
-
-        break;
-
-        case "Virus":
-
-            titulo = "🛡️ Amenaza detectada";
-
-            causas = `
-            <li>Malware activo.</li>
-            <li>Publicidad invasiva.</li>
-            <li>Archivos sospechosos.</li>
-            `;
-
-            sugerencia =
-            "Evita abrir páginas desconocidas.";
-
-        break;
-
-        case "Pantalla azul":
-
-            titulo = "🔵 Error crítico";
-
-            causas = `
-            <li>RAM defectuosa.</li>
-            <li>Drivers corruptos.</li>
-            <li>Problema de disco.</li>
-            `;
-
-            sugerencia =
-            "Se recomienda diagnóstico técnico.";
-
-        break;
-
-        case "Internet":
-
-            titulo = "🌐 Problema de red";
-
-            causas = `
-            <li>IP incorrecta.</li>
-            <li>Cable dañado.</li>
-            <li>Router saturado.</li>
-            `;
-
-            sugerencia =
-            "Reinicia router y verifica cables.";
-
-        break;
-
-        case "Atasco de papel":
-
-            titulo = "📄 Falla mecánica";
-
-            causas = `
-            <li>Papel mal colocado.</li>
-            <li>Rodillos sucios.</li>
-            <li>Sensor bloqueado.</li>
-            `;
-
-            sugerencia =
-            "Retira el papel lentamente.";
-
-        break;
-
-        case "Mala calidad de impresión":
-
-            titulo = "🖨️ Problema de impresión";
-
-            causas = `
-            <li>Tinta baja.</li>
-            <li>Cabezales sucios.</li>
-            <li>Papel incorrecto.</li>
-            `;
-
-            sugerencia =
-            "Realiza limpieza de cabezales.";
-
-        break;
-
-        case "Error de conexión":
-
-            titulo = "🔌 Error de conexión";
-
-            causas = `
-            <li>Driver incorrecto.</li>
-            <li>Cable USB dañado.</li>
-            <li>Puerto defectuoso.</li>
-            `;
-
-            sugerencia =
-            "Prueba otro puerto USB.";
-
-        break;
-
-    }
-
-    let mensaje =
-`Hola, realicé el diagnóstico web.%0A
-Equipo: ${tipo}%0A
-Problema: ${problema}%0A
-Detalle: ${detalle}`;
-
-    resultado.innerHTML = `
-
-    <div class="resultado-box">
-
-        <h3>${titulo}</h3>
-
-        <p>
-        <strong>Posibles causas:</strong>
-        </p>
-
-        <ul>
-            ${causas}
-        </ul>
-
-        <p>
-        <strong>Sugerencia técnica:</strong><br>
-        ${sugerencia}
-        </p>
-
-        <a href="https://wa.me/51924489650?text=${mensaje}"
-        target="_blank">
-
-            Enviar diagnóstico por WhatsApp
-
-        </a>
-
-    </div>
-
-    `;
-
-}
-
-</script>
-
-
-<!-- CONTACTO -->
 <section id="contacto">
-    <h2 class="titulo">Contacto</h2>
-    <div class="card contacto-card" style="text-align: center; padding: 30px;">
-        <h3>¿Necesitas soporte técnico?</h3>
-        <p>Escríbenos directamente para una atención personalizada.</p>
-        <a href="https://wa.me/51924489650" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background-color: #25D366; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; gap: 10px; margin-top: 15px; transition: 0.3s;">
-            <span style="font-size: 1.5em;">💬</span> WhatsApp Directo
-        </a>
-    </div>
+
+<h2 class="titulo">
+Contacto
+</h2>
+
+<div class="card contacto-card">
+
+<div class="contact-icon">
+💬
+</div>
+
+<h3>
+¿Necesitas soporte técnico?
+</h3>
+
+<p>
+Escríbenos directamente para una atención
+personalizada y rápida.
+</p>
+
+<a href="https://wa.me/51924489650"
+target="_blank"
+class="contacto-btn">
+
+💬 WhatsApp Directo
+
+</a>
+
+</div>
+
 </section>
 
+<!-- =========================================
+     FOOTER
+========================================= -->
+
 <footer>
-    © 2026 CTecnologia
+
+<div class="footer-content">
+
+<h3>
+CTecnologia
+</h3>
+
+<p>
+Soluciones modernas para tu mundo digital.
+</p>
+
+<span>
+© 2026 CTecnologia | Todos los derechos reservados
+</span>
+
+</div>
+
 </footer>
 
-<script>
-function enviarDiagnostico(){
-    let tipo = document.getElementById("tipo").value;
-    let problema = document.getElementById("problema").value;
-    let detalle = document.getElementById("detalle").value;
-    let contenedor = document.getElementById("resultado-diagnostico");
+<!-- =========================================
+     BOTÓN FLOTANTE WHATSAPP
+========================================= -->
 
-    let titulo = "";
-    let causas = "";
-    let sugerencia = "";
+<a href="https://wa.me/51924489650"
+target="_blank"
+class="whatsapp-float">
 
-    // Lógica extendida para incluir impresoras
-    switch (problema) {
-        case "No enciende":
-            titulo = "Análisis de Energía";
-            causas = "<li>Fallo en cargador o fuente de poder.</li><li>Batería agotada o dañada.</li><li>Fallo en el botón de encendido.</li>";
-            sugerencia = "Prueba conectar el equipo a un toma corriente diferente sin regletas.";
-            break;
-        case "Lento":
-            titulo = "Análisis de Rendimiento";
-            causas = "<li>Disco duro saturado o antiguo.</li><li>Muchos programas en segundo plano.</li><li>Falta de mantenimiento físico (limpieza).</li>";
-            sugerencia = "Una limpieza de software o cambio a disco sólido (SSD) mejorará la velocidad.";
-            break;
-        case "Atasco de papel":
-            titulo = "Fallo Mecánico (Impresora)";
-            causas = "<li>Restos de papel en los rodillos.</li><li>Sensores de paso obstruidos.</li><li>Bandeja de papel mal ajustada.</li>";
-            sugerencia = "Retira el papel con cuidado siguiendo el sentido de los rodillos, nunca hacia atrás.";
-            break;
-        case "Mala calidad de impresión":
-            titulo = "Análisis de Insumos";
-            causas = "<li>Inyectores de cabezal obstruidos.</li><li>Nivel de tinta o tóner insuficiente.</li><li>Papel inadecuado para la configuración.</li>";
-            sugerencia = "Ejecuta una limpieza de cabezales desde el panel de control de la impresora.";
-            break;
-        case "Error de conexión":
-            titulo = "Análisis de Comunicación";
-            causas = "<li>Cable USB defectuoso.</li><li>Conflicto en la cola de impresión de Windows.</li><li>Driver de impresora desactualizado.</li>";
-            sugerencia = "Reinicia la cola de impresión y reconecta el cable en un puerto USB diferente.";
-            break;
-        case "Virus":
-            titulo = "Análisis de Seguridad";
-            causas = "<li>Infección por malware activo.</li><li>Archivos temporales sospechosos.</li>";
-            sugerencia = "Desconecta el equipo de internet hasta realizar el escaneo.";
-            break;
-        case "Pantalla azul":
-            titulo = "Error Crítico";
-            causas = "<li>Fallo en memoria RAM.</li><li>Drivers de video incompatibles.</li>";
-            sugerencia = "Si el error es constante, requiere revisión técnica de hardware.";
-            break;
-        case "Internet":
-            titulo = "Análisis de Red";
-            causas = "<li>Tarjeta de red desactivada.</li><li>Configuración IP errónea.</li>";
-            sugerencia = "Verifica si el modo avión está desactivado.";
-            break;
-    }
+💬
 
-    // Preparar mensaje para el botón opcional de WhatsApp
-    let msg = "Hola, realicé el diagnóstico web.%0AEquipo: "+tipo+"%0AProblema: "+problema+"%0ADetalle: "+detalle;
+</a>
 
-    // Mostrar el resultado visualmente SIN redirección automática
-    contenedor.innerHTML = `
-        <div style="background: rgba(0, 180, 216, 0.1); border: 2px solid #00b4d8; padding: 20px; border-radius: 12px; color: #fff; animation: fadeIn 0.4s ease-out;">
-            <h4 style="color: #00b4d8; margin-top: 0;">${titulo}</h4>
-            <p><strong>Los posibles problemas son los siguientes:</strong></p>
-            <ul style="padding-left: 20px; line-height: 1.6; font-size: 0.9em;">${causas}</ul>
-            <p style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 5px; font-size: 0.9em;">
-                <strong>Sugerencia técnica:</strong> ${sugerencia}
-            </p>
-            <hr style="border: 0.5px solid #333; margin: 15px 0;">
-            <p style="font-size: 0.85em; margin-bottom: 10px;">¿Deseas enviar este diagnóstico a un técnico?</p>
-            <a href="https://wa.me/51924489650?text=${msg}" target="_blank" style="display: inline-block; background: #00b4d8; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 0.9em; font-weight: bold;">
-                Enviar por WhatsApp 🚀
-            </a>
-        </div>
-    `;
-}
-</script>
+<!-- =========================================
+     SCRIPT
+========================================= -->
 
-<style>
-/* Estilo extra para suavizar la aparición del diagnóstico */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+<script src="script.js"></script>
 
-.contacto-card a:hover {
-    background-color: #128C7E !important;
-    transform: scale(1.05);
-}
-</style>
+</body>
+</html>
